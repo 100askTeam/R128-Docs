@@ -75,9 +75,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'TinaSDK5',
+        title: '全志R128',
         logo: {
-          alt: 'DshanPI',
+          alt: 'aw-r128',
           src: 'img/logo.svg',
         },
         items: [
@@ -85,7 +85,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'boardquickstartSidebar',
             position: 'left',
-            label: '学习板使用',
+            label: '基础入门',
           }, 
           {
             type: 'docSidebar',
