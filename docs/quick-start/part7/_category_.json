@@ -1,8 +1,8 @@
 {
-  "label": "T113-i_DevKit",
-  "position": 2,
+  "label": "其他",
+  "position": 8,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": " "
   }
 }

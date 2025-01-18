@@ -1,6 +1,6 @@
 {
-  "label": "硬件上手",
-  "position": 3,
+  "label": "SDK HAL 模块开发指南",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": " "
