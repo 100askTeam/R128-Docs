@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-quick-start/part6/chapter1" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.0.1">
+<title data-rh="true">硬件设计指南 | aw-r128</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aw-r128.100ask.net/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://aw-r128.100ask.net/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://aw-r128.100ask.net/quick-start/part6/chapter1"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="硬件设计指南 | aw-r128"><meta data-rh="true" name="description" content="原理图设计"><meta data-rh="true" property="og:description" content="原理图设计"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://aw-r128.100ask.net/quick-start/part6/chapter1"><link data-rh="true" rel="alternate" href="https://aw-r128.100ask.net/quick-start/part6/chapter1" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://aw-r128.100ask.net/en/quick-start/part6/chapter1" hreflang="en"><link data-rh="true" rel="alternate" href="https://aw-r128.100ask.net/quick-start/part6/chapter1" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.e3ab61ce.css">
+<script src="/assets/js/runtime~main.ea5b7d3d.js" defer="defer"></script>
+<script src="/assets/js/main.a948c6ba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="aw-r128" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="aw-r128" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">全志R128</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/category/视频教程">基础入门</a><a class="navbar__item navbar__link" href="/category/基础组件开发指南">开发指南</a><a class="navbar__item navbar__link" href="/category/应用开发案例">开发案例</a></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/quick-start/part6/chapter1" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li><li><a href="/en/quick-start/part6/chapter1" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="en">English</a></li></ul></div><a href="https://github.com/100askTeam/R128-Docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/视频教程">视频教程</a><button aria-label="展开侧边栏分类 &#x27;视频教程&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/芯片概述">芯片概述</a><button aria-label="展开侧边栏分类 &#x27;芯片概述&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/硬件上手">硬件上手</a><button aria-label="展开侧边栏分类 &#x27;硬件上手&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/sdk入门">SDK入门</a><button aria-label="展开侧边栏分类 &#x27;SDK入门&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/软件配置">软件配置</a><button aria-label="展开侧边栏分类 &#x27;软件配置&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/外设模块配置">外设模块配置</a><button aria-label="展开侧边栏分类 &#x27;外设模块配置&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" aria-expanded="true" href="/category/硬件设计">硬件设计</a><button aria-label="折叠侧边栏分类 &#x27;硬件设计&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/quick-start/part6/chapter1">硬件设计指南</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/quick-start/part6/chapter2">硬件设计参考</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/quick-start/part6/chapter3">芯片外设支持列表</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/category/其他">其他</a><button aria-label="展开侧边栏分类 &#x27;其他&#x27;" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/category/硬件设计"><span itemprop="name">硬件设计</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">硬件设计指南</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><h1>硬件设计指南</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="原理图设计">原理图设计<a href="#原理图设计" class="hash-link" aria-label="原理图设计的直接链接" title="原理图设计的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="硬件系统框图">硬件系统框图<a href="#硬件系统框图" class="hash-link" aria-label="硬件系统框图的直接链接" title="硬件系统框图的直接链接">​</a></h3>
+<p>R128是一颗专为“音视频解码”而打造的全新高集成度 SoC，主要应用于智能物联和专用语音交互处理解决方案。</p>
+<ul>
+<li>单片集成 MCU+RISCV+DSP+CODEC+WIFI/BT+PMU，提供生态配套成熟、完善的用于系统、应用和网络连接开发的高效算力；</li>
+<li>集成 8MB/16MB/32MB PSRAM，为音视频解码、大容量存储、扫码以及网络连接提供充裕的高容量、高带宽的内存支持；</li>
+<li>拥有丰富的音频接口 IIS/PCM、OWA、DMIC、LINEOUT、MICIN 以及通用通讯接口 IIC、UART、SDIO、 SPI、ISO7816卡接口；同时支持 U 盘、SD卡、IR-TX/RX；</li>
+<li>内置 LDO、GPADC、LEDC，简化系统方案设计，降低 BOM成本。</li>
+</ul>
+<p><img loading="lazy" alt="image1" src="/assets/images/image1-d3a7d4caf93b127790340589936edfdf.jpg" width="800" height="500" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="硬件系统基本工作原理">硬件系统基本工作原理<a href="#硬件系统基本工作原理" class="hash-link" aria-label="硬件系统基本工作原理的直接链接" title="硬件系统基本工作原理的直接链接">​</a></h3>
+<p>R128硬件系统基本工作流程如下：</p>
+<ul>
+<li>硬件系统正常上电，主控复位之后，CPU开始执行 BROM固化代码，对系统资源和关键外设进行配置及初始化，包括电源，时钟，总线，复位，存储接口等。</li>
+<li>根据配置，在 BROM阶段将系统初始化信息（串口、PSRAM等）从存储介质读取到系统 SRAM，进行芯片及系统的进一步详细配置和初始化工作；执行完 Boot0 程序后进入 boot 阶段。</li>
+<li>从外部存储介质中读取下一阶段需要的软件代码，启动操作系统，并对系统资源和外设进行管理。</li>
+<li>操作系统启动之后，根据产品不同需求加载相关启动，比如 USB、音频、WIFI、显示、蓝牙等模块，最终完成开机启动，进入普通操作界面。</li>
+<li>系统支持 watchdog 应用监视系统的运行，当程序跑飞或者发生死循环时，watchdog模块会发出一个复位信号，使 SOC复位，软件系统重新启动。</li>
+</ul>
+<p>R128硬件系统组成如下表：</p>
+<table><thead><tr><th style="text-align:left">系统</th><th style="text-align:left">说明</th></tr></thead><tbody><tr><td style="text-align:left">CPU小系统</td><td style="text-align:left">时钟，复位，中断，系统配置</td></tr><tr><td style="text-align:left">存储系统</td><td style="text-align:left">PSRAM，SPI NAND/SPI NOR/EMMC/SD CARD</td></tr><tr><td style="text-align:left">音频系统</td><td style="text-align:left">MIC IN、FMIN、IIS/PCM/TDM、DMIC、LINEOUT</td></tr><tr><td style="text-align:left">输入输出子系统</td><td style="text-align:left">RGB、SD CARD、USB OTG/HOST、TWI、UART、PWM、GPADC、TPADC、CSI、 IR TX/RX 等</td></tr><tr><td style="text-align:left">电源系统</td><td style="text-align:left">DCDC、LDO</td></tr><tr><td style="text-align:left">无线</td><td style="text-align:left">WIFI/BT</td></tr><tr><td style="text-align:left">其他</td><td style="text-align:left">功放、LED</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cpu小系统">CPU小系统<a href="#cpu小系统" class="hash-link" aria-label="CPU小系统的直接链接" title="CPU小系统的直接链接">​</a></h3>
+<p>R128 CPU小系统包括时钟系统，系统配置 PIN、复位系统和 Debug 部分。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="时钟系统信号pin说明">时钟系统信号PIN说明<a href="#时钟系统信号pin说明" class="hash-link" aria-label="时钟系统信号PIN说明的直接链接" title="时钟系统信号PIN说明的直接链接">​</a></h4>
+<p>R128 硬件系统包含 DCXO 40M/RTC 32.768K 两个时钟，对应时钟信号说明如表所示。</p>
+<table><thead><tr><th style="text-align:left">信号名</th><th style="text-align:left">信号描述</th><th style="text-align:left">应用说明</th></tr></thead><tbody><tr><td style="text-align:left">HXTAL_IN</td><td style="text-align:left">DCXO晶振输入</td><td style="text-align:left">默认使用 40M晶振，频率误差为 10PPM；</td></tr><tr><td style="text-align:left">HXTAL_OUT</td><td style="text-align:left">DCXO晶振输出</td><td style="text-align:left">默认使用 40M晶振，频率误差为 10PPM；</td></tr><tr><td style="text-align:left">LXTAL_IN</td><td style="text-align:left">32K晶振输入</td><td style="text-align:left">32.768K晶振电路，频率误差为 20PPM</td></tr><tr><td style="text-align:left">LXTAL_OUT</td><td style="text-align:left">32K晶振输出</td><td style="text-align:left">32.768K晶振电路，频率误差为 20PPM</td></tr></tbody></table>
+<blockquote>
+<p>RTC 32.768K时钟可以从内部 RC振荡电路产生，可不使用外部 32K晶振。</p>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="小系统配置说明">小系统配置说明<a href="#小系统配置说明" class="hash-link" aria-label="小系统配置说明的直接链接" title="小系统配置说明的直接链接">​</a></h4>
+<p>R128小系统配置 PIN说明如表所示。</p>
+<table><thead><tr><th style="text-align:left">信号名</th><th style="text-align:left">信号说明</th><th style="text-align:left">应用说明</th></tr></thead><tbody><tr><td style="text-align:left">RESET</td><td style="text-align:left">system reset</td><td style="text-align:left">1，系统复位 PIN 2，Watchdog 输出 PIN</td></tr><tr><td style="text-align:left">CHIP-PWD</td><td style="text-align:left">Chip power down/System reset</td><td style="text-align:left">1，内部 PMU 下电控制 pin； 2，系统复位 pin</td></tr><tr><td style="text-align:left">PA1/FEL0</td><td style="text-align:left">FEL功能选择 pin 0</td><td style="text-align:left">当[FEL0,FEL1]= 00时，SOC进入 FEL升级状态</td></tr><tr><td style="text-align:left">PA2/FEL1</td><td style="text-align:left">FEL功能选择 pin 1</td><td style="text-align:left">当[FEL0,FEL1]= 00时，SOC进入 FEL升级状态</td></tr></tbody></table>
+<ul>
+<li>RESET和 CHIP-PWD均可实现系统复位功能，但 CHIP-PWD包含 R128内部 PMU掉电控制功能，可让R128实现上电复位功能。</li>
+<li>RESET/CHIP-PWD信号上接下地电容默认为 1nF，用于滤波和增强 ESD 防护能力</li>
+<li>为避免 SOC启动时误进入升级状态，PA1/FEL0和 PA2/FEL1 不能同时接下拉电阻。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主晶振电路">主晶振电路<a href="#主晶振电路" class="hash-link" aria-label="主晶振电路的直接链接" title="主晶振电路的直接链接">​</a></h4>
+<ul>
+<li>R128 DCXO模块推荐使用 40M 晶振以获得更好的射频性能。</li>
+<li>晶振选型参考如下:</li>
+<li>R128集成 WIFI/BT功能，为获得更好的射频性能，建议晶振选型频率容限与频率稳定性均≤ 10ppm</li>
+<li>晶体负载电容指标 CL，建议 CL≥10pF。CL过小会导致晶体温飘过大</li>
+<li>晶体驱动能力 DL，建议典型值 100uW，最大不超过 200uW。取值过小会影响晶体寿命。</li>
+<li>外挂匹配电容大小根据晶振规格和 PCB而定，要求匹配电容+板级杂散电容总值等于晶振规格要求的负载电容大小。</li>
+<li>串接电阻需要预留位置，便于调试振荡幅度处理 EMI 问题。</li>
+</ul>
+<p><img loading="lazy" alt="image2" src="/assets/images/image2-7cafc62755d7c85e84a6239b0e66d6f1.jpg" width="954" height="577" class="img_ev3q"></p>
+<blockquote>
+<p>晶振参数不得随意更改，需保证晶体自身负载电容、外挂匹配电容、PCB走线负载电容三者匹配。</p>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="32768k时钟电路">32.768K时钟电路<a href="#32768k时钟电路" class="hash-link" aria-label="32.768K时钟电路的直接链接" title="32.768K时钟电路的直接链接">​</a></h4>
+<ul>
+<li>支持内部 RCOSC时钟，支持 HOSC校准，满足 32.768K时钟输出。</li>
+<li>外挂 32.768K 晶振时，外挂匹配电容大小根据晶振规格和 PCB而定，要求匹配电容+板级杂散电容总值等于晶振规格要求的负载电容大小。</li>
+<li>LXTAL_IN/LXTAL_OUT 之间并接的电阻，必须保留，用于对频率微调。</li>
+</ul>
+<p><img loading="lazy" alt="image3" src="/assets/images/image3-b543eb527813dfcfde485758cf8787bd.jpg" width="467" height="297" class="img_ev3q"></p>
+<blockquote>
+<p>晶振参数不得随意更改，需保证晶体自身负载电容、外挂匹配电容、PCB走线负载电容三者匹配。</p>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="复位电路设计">复位电路设计<a href="#复位电路设计" class="hash-link" aria-label="复位电路设计的直接链接" title="复位电路设计的直接链接">​</a></h4>
+<p>R128可以选择使用外部复位 IC提供复位信号，也可以使用内部复位源。</p>
+<ul>
+<li>内部上电复位触发门槛：VBAT爬升至约 2.4V；</li>
+<li>内部下电复位触发门槛：VBAT跌落至 3.0V/2.9V/2.8V/2.7V/2.6V/2.5V(软件可配置)，详见 R128用户手册；</li>
+<li>使用外部复位 IC 复位，时长不得低于 64ms；</li>
+<li>RESET Pin放置 1nF电容。</li>
+</ul>
+<p><img loading="lazy" alt="image4" src="/assets/images/image4-1c48a57c693c2a1f10d3ef71eff6eb57.jpg" width="868" height="486" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="debug电路设计">DEBUG电路设计<a href="#debug电路设计" class="hash-link" aria-label="DEBUG电路设计的直接链接" title="DEBUG电路设计的直接链接">​</a></h4>
+<p>R128支持 USB（OTG）、UART、JTAG与 SWD 等多种调试方式，客户可根据需要选择合适的调试方式，建议在设计时对相应的调试接口预留测试点方便后续调试验证。</p>
+<p><img loading="lazy" alt="image5" src="/assets/images/image5-933d7ef38486935d17920eee21092c2d.jpg" width="1030" height="465" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="电源系统设计">电源系统设计<a href="#电源系统设计" class="hash-link" aria-label="电源系统设计的直接链接" title="电源系统设计的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="soc端电源质量要求">SOC端电源质量要求<a href="#soc端电源质量要求" class="hash-link" aria-label="SOC端电源质量要求的直接链接" title="SOC端电源质量要求的直接链接">​</a></h4>
+<p>R128集成 PMU，外部仅需提供 VBAT 电源即可满足 R128 电源应用需求，其他电源由内部 PMU 产生。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="soc端电源电容设计">SOC端电源电容设计<a href="#soc端电源电容设计" class="hash-link" aria-label="SOC端电源电容设计的直接链接" title="SOC端电源电容设计的直接链接">​</a></h4>
+<p>R128 SOC端各电源要求滤波电容容值如下：</p>
+<ul>
+<li>VDD_LX管脚建议预留放置 1个 2.2uF电容；</li>
+<li>VDD_SENSE管脚建议放置 1个 4.7uF电容；</li>
+<li>VDD_CLK、VDD18_ANA1、VDD18_TX1、VDD18_ANA2、VDD18_TX2电源 pin建议各放置 1个 100nF电容，靠近管脚放置；</li>
+</ul>
+<p><img loading="lazy" alt="image6" src="/assets/images/image6-f1313fb9ae50fd3788f986323d9dbc80.jpg" width="615" height="470" class="img_ev3q"></p>
+<ul>
+<li>VDD_DSP建议放置 1个 1uF电容，靠近管脚放置；</li>
+<li>VDD_RTC建议放置 1个 1uF电容，靠近管脚放置；</li>
+<li>VDD_SYS1、VDD_SYS2建议各放置 1 个 1uF电容，靠近管脚放置；</li>
+<li>VDD_AON建议放置 1个 1uF电容，VDD12_PSM 建议放置 1 个 100nF 电容，靠近管脚放置；</li>
+<li>VDD_3V3建议放置 1个 1uF电容， VDD33_LB1、VDD33_LB2 建议各放置 1 个 100nF 电容，靠近管脚放置；</li>
+<li>VDD_IO1、VDD_IO2、VDD_IO_5VTOL建议各放置 1 个 100nF 电容，靠近管脚放置；</li>
+</ul>
+<p><img loading="lazy" alt="image7" src="/assets/images/image7-c82b0562c32cf797ab7adfc33ce757ef.jpg" width="627" height="340" class="img_ev3q"></p>
+<ul>
+<li>AVDD电源与 AGND之间至少 1个 2.2uF电容，靠近引脚放置。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="上电时序设计">上电时序设计<a href="#上电时序设计" class="hash-link" aria-label="上电时序设计的直接链接" title="上电时序设计的直接链接">​</a></h4>
+<p>R128各模块供电采用内部 PMU，其上电时序如图所示，时序描述如下：</p>
+<ul>
+<li>VBAT为 SOC外部电源输入，其上电至 2.4V附近触发内部 POR复位；</li>
+<li>完成 POR 复位后，PMU各路 DCDC、LDO按照下图所示时序进行上电；</li>
+</ul>
+<p><img loading="lazy" alt="image8" src="/assets/images/image8-486cb489958db7706ca8ae69d5890a07.jpg" width="800" height="331" class="img_ev3q"></p>
+<p>当使用外部 DCDC 或 LDO为 R128 的 VDD_IO1、VDD_IO2和 VDD_IO_5VTOL进行供电时，为避免电源从 IO漏电导致 SOC启动失败，建议使用 EXT_LDO（pin VDD_3V3）对外部 DCDC或 LDO 进行时序控制。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="下电时序设计">下电时序设计<a href="#下电时序设计" class="hash-link" aria-label="下电时序设 计的直接链接" title="下电时序设计的直接链接">​</a></h4>
+<p>R128下电时序如图所示，时序描述如下：</p>
+<ul>
+<li>R128内部集成掉电复位功能，通过检测 VBAT电压触发复位，可软件使能掉电复位功能和配置门槛电压，详见 R128 用户手册描述；</li>
+<li>复位信号拉低后，DXCO、RCOSC停止振荡，各路 DCDC、LDO停止输出。</li>
+</ul>
+<p><img loading="lazy" alt="image9" src="/assets/images/image9-c9d95e5594ae6f200eb2cc4c15bafe4e.jpg" width="800" height="330" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="psram-电路设计">PSRAM 电路设计<a href="#psram-电路设计" class="hash-link" aria-label="PSRAM 电路设计的直接链接" title="PSRAM 电路设计的直接链接">​</a></h3>
+<p>R128内置 PSRAM，无需外部电路，只需满足 R128 电源设计要求即可。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flash-电路设计">Flash 电路设计<a href="#flash-电路设计" class="hash-link" aria-label="Flash 电路设计的直接链接" title="Flash 电路设计的直接链接">​</a></h3>
+<p>R128支持合封 SPI Nor FLSAH，支持外挂 SPI Nand/Nor、eMMC，设计说明如下：</p>
+<ul>
+<li>使用合封 SPI Nor FLASH 时，VDD-IO1必须使用 3.3V电源；</li>
+<li>使用外挂 SPI Nand/Nor、eMMC 器件时，可选择从 PA24-PA29、PB4-PB7&amp;PB14/15、PA2-PA7 三个地方启动；</li>
+<li>启动介质选择支持 Try 与 eFuse Select 两种方式；</li>
+<li>Try 方式启动顺序为 SDC0-&gt;SPI NOR-&gt;SPI NAND-&gt;EMMC，该模式仅支持轮询 PA 口的启动介质</li>
+<li>eFuse Select方式启动顺序由 eFuse决定，具体启动顺序及烧码值可定制</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="spi-nornand-参考设计">SPI NOR/NAND 参考设计<a href="#spi-nornand-参考设计" class="hash-link" aria-label="SPI NOR/NAND 参考设计的直接链接" title="SPI NOR/NAND 参考设计的直接链接">​</a></h4>
+<p><img loading="lazy" alt="image10" src="/assets/images/image10-87bd899feb92552f3d8e2dd66bc82205.jpg" width="972" height="535" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gpio-电路设计">GPIO 电路设计<a href="#gpio-电路设计" class="hash-link" aria-label="GPIO 电路设计的直接链接" title="GPIO 电路设计的直接链接">​</a></h3>
+<p>R128 有PA/PB 2 组GPIO,GPIO 逻辑电平与供电电压有关。</p>
+<ul>
+<li>未使用的GPIO 优先建议接地或者Floating，软件设定为disabled 状态；</li>
+<li>IO 上拉电阻上拉电压选择IO 所在电源域。</li>
+</ul>
+<table><thead><tr><th style="text-align:left">GPIO 分组</th><th style="text-align:left">控制器电源域</th><th style="text-align:left">IO电源域</th><th style="text-align:left">IO电压</th></tr></thead><tbody><tr><td style="text-align:left">PA0~PA14</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO2</td><td style="text-align:left">3.3V/1.8V</td></tr><tr><td style="text-align:left">PA18~PA23</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO2</td><td style="text-align:left">3.3V/1.8V</td></tr><tr><td style="text-align:left">PA16~PA17</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO-5VTOL</td><td style="text-align:left">5V/3.3V/1.8V</td></tr><tr><td style="text-align:left">PA15</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO1</td><td style="text-align:left">3.3V/1.8V</td></tr><tr><td style="text-align:left">PA24~PA29</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO1</td><td style="text-align:left">3.3V/1.8V</td></tr><tr><td style="text-align:left">PB0~PB15</td><td style="text-align:left">VDD-SYS</td><td style="text-align:left">VDD-IO1</td><td style="text-align:left">3.3V/1.8V</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="led电路设计">LED电路设计<a href="#led电路设计" class="hash-link" aria-label="LED电路设计的直接链接" title="LED电路设计的直接链接">​</a></h3>
+<p>R128集成 LEDC功能，可以直接驱动集成式 LED。</p>
+<p>集成式 LED一般供电范围是 3.5～5.3V，Vih必须大于 0.7*VDD，如 WS2812C。当 VDD为 5V供电时，Vih必须大于 3.5V，已超出 SOC IO输出电压范围。解决方案：</p>
+<ul>
+<li>5V供电串联 1N4148二极管，降低 VDD电压，理论 VDD电压为 4.3V，此时 Vih 大于 3V 即可；</li>
+<li>市场已有 5V 供电且支持 3.3V逻辑控制的集成式 LED，如 WS2128B-V4/V5。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="usb电路设计">USB电路设计<a href="#usb电路设计" class="hash-link" aria-label="USB电路设计的直接链接" title="USB电路设计的直接链接">​</a></h3>
+<p>R128 USB接口具有 HOST和 OTG功能，在产品功能定义上需要注意区别。</p>
+<ul>
+<li>若使用 Micro USB 供电，建议在 VBUS上放置限流和防倒灌 IC、TVS 保护器件；</li>
+<li>USB-ID 信号为 OTG 检测信号，上拉电压选择 USB-ID Pin所在电源域；</li>
+<li>USB-ID 信号到 SOC端的 GPIO 串接 1K~1.5K电阻提升 ESD性能；</li>
+<li>建议在 VBUS 上放置稳压管和 TVS保护器件；</li>
+<li>D+/D-信号线为高速信号线，并接的 TVS 要求低容值，否则影响数据传输，以小于 4pF 为宜；串接预留 5 电阻。</li>
+</ul>
+<p><img loading="lazy" alt="image11" src="/assets/images/image11-1a9dd140b9a24a3472494538c2febed9.jpg" width="758" height="377" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sd-card-电路设计">SD Card 电路设计<a href="#sd-card-电路设计" class="hash-link" aria-label="SD Card 电路设计的直接链接" title="SD Card 电路设计的直接链接">​</a></h3>
+<ul>
+<li>SDC0-CLK串接 33R电阻，靠近 SoC摆放；</li>
+<li>SDC0-CMD和 SDC0-DET Pin芯片内部集成 15K上拉电阻，外部 10K上拉默认 NC；</li>
+<li>SDC0-DET串接 1K电阻，减缓信号下冲和提供 IO ESD能力；</li>
+<li>靠近 SD 卡座，每个信号 Pin放置 ESD器  件。</li>
+<li>SD卡座电源 VDD预留串联 0R电阻，防止卡插入时，瞬间大电流烧卡。</li>
+</ul>
+<p><img loading="lazy" alt="image12" src="/assets/images/image12-90932d91f594f74e1668960877af4228.jpg" width="749" height="425" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="音频电路设计">音频电路设计<a href="#音频电路设计" class="hash-link" aria-label="音频电路设计的直接链接" title="音频电路设计的直接链接">​</a></h3>
+<ul>
+<li>3个 ADC，可支持 3 个差分 MIC 输入；</li>
+<li>2个 DAC，R128-S1/S2可支持差分立体声输出，R128-S3可支持单声道差分音频输出；</li>
+<li>支持 1 套 I2S/PCM 接口，支持 TDM模式，支持主从模式；</li>
+<li>支持 OWA 输出，兼容 SPDIF 协议；</li>
+<li>支持 DMIC 8 声道输入。</li>
+</ul>
+<p>音频设计建议如下：</p>
+<ul>
+<li>AVDD对地电容为 2.2uF；VRA1对地电容为 470nF；VRA2对地电容为 470nF；MBIAS对地电容为 2.2uF；</li>
+<li>AVDD/VRA1/VRA2的 AGND通过 0R电阻单点到 GND；</li>
+</ul>
+<p><img loading="lazy" alt="image13" src="/assets/images/image13-998f6e29f456db09e6506a43c2bcf2ca.jpg" width="576" height="258" class="img_ev3q"></p>
+<ul>
+<li>MIC1-3建议组合成 2MIC+1AEC 电路；</li>
+</ul>
+<p>MIC和 AEC参考设计如图所示。AEC 回路电阻电容参数与功放输出幅度和算法公司要求有关，参数以实际开发环境为准。</p>
+<p><img loading="lazy" alt="image14" src="/assets/images/image14-54871de9f64d2afd00ccc8697c5e748d.jpg" width="801" height="401" class="img_ev3q"></p>
+<p><img loading="lazy" alt="image15" src="/assets/images/image15-ede61a97ffd5af2f21bdcc5512e57f82.jpg" width="800" height="560" class="img_ev3q"></p>
+<p><img loading="lazy" alt="image16" src="/assets/images/image16-5ae370e74df1d20f4587245753dd0767.jpg" width="820" height="323" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="adc电路设计">ADC电路设计<a href="#adc电路设计" class="hash-link" aria-label="ADC电路设计的直接链接" title="ADC电路设计的直接链接">​</a></h3>
+<p>支持 1 路 GPADC 接口，12bit采样分辨率，9bit采样精度，单通道最高采样率为 1MHz，最大支持 8 通道，可以用作按键功能或采集电池电压使用。</p>
+<ul>
+<li>GPADC 量程范围为 0～2.5V，应用时建议使用 0.2～2.3V作为输入检测电平；</li>
+<li>按键按键分压电阻，请使用推荐的阻值，如 5 个按键以下，推荐使用 1%精度电阻。添加按键时保证按键按下后，ADC网络电压范围为 0~1.08V，最小间隔大于 200mV。</li>
+</ul>
+<p><img loading="lazy" alt="image17" src="/assets/images/image17-0f463fc124f6312de0faa437200ae15e.jpg" width="800" height="330" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lcd电路接口">LCD电路接口<a href="#lcd电路接口" class="hash-link" aria-label="LCD电路接口的直接链接" title="LCD电路接口的直接链接">​</a></h3>
+<p>R128 支持一路 RGB屏接口和一路 SPI屏接口。其中 RGB屏接口可支持并行 RGB666 模式（1024x768@60fps）、串行 RGB模式（800x480@60fps）和 i8080模式（800x480@60fps），各种模式下管脚功能描述如下表。</p>
+<p><img loading="lazy" alt="image18" src="/assets/images/image18-01a0e7b8ca52209be998be0e7570262d.jpg" width="943" height="762" class="img_ev3q"></p>
+<p>SPI屏支持以下几种模式：</p>
+<table><thead><tr><th style="text-align:left">3 线 1 DATA</th><th style="text-align:left">3 线 2 DATA</th><th style="text-align:left">4线1 DATA</th><th style="text-align:left">4线2 DATA</th><th style="text-align:left">2 DATA Lane</th></tr></thead><tbody><tr><td style="text-align:left">DBI-CSX</td><td style="text-align:left">DBI-CSX</td><td style="text-align:left">DBI-CSX</td><td style="text-align:left">DBI-CSX</td><td style="text-align:left">DBI-CSX</td></tr><tr><td style="text-align:left">/</td><td style="text-align:left">/</td><td style="text-align:left">DBI-DCX</td><td style="text-align:left">DBI-DCX</td><td style="text-align:left">/</td></tr><tr><td style="text-align:left">DBI-SCLK</td><td style="text-align:left">DBI-SCLK</td><td style="text-align:left">DBI-SCLK</td><td style="text-align:left">DBI-SCLK</td><td style="text-align:left">DBI-SCLK</td></tr><tr><td style="text-align:left">DBI-SDA</td><td style="text-align:left">DBI-SDO</td><td style="text-align:left">DBI-SDA</td><td style="text-align:left">DBI-SDO</td><td style="text-align:left">DBI-SDA</td></tr><tr><td style="text-align:left">/</td><td style="text-align:left">DBI-SDI</td><td style="text-align:left">/</td><td style="text-align:left">DBI-SDI</td><td style="text-align:left">WRX</td></tr><tr><td style="text-align:left">DBI-TE</td><td style="text-align:left">DBI-TE</td><td style="text-align:left">DBI-TE</td><td style="text-align:left">DBI-TE</td><td style="text-align:left">DBI-TE</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="dbi接口与spi1复用关系">DBI接口与SPI1复用关系<a href="#dbi接口与spi1复用关系" class="hash-link" aria-label="DBI接口与SPI1复用关系的直接链接" title="DBI接口与SPI1复用关系的直接链接">​</a></h4>
+<table><thead><tr><th style="text-align:left">SPI</th><th style="text-align:left">DBI</th></tr></thead><tbody><tr><td style="text-align:left">SPI1-CS</td><td style="text-align:left">DBI-CSX</td></tr><tr><td style="text-align:left">SPI1-CLK</td><td style="text-align:left">DBI-SCLK</td></tr><tr><td style="text-align:left">SPI1-MOSI</td><td style="text-align:left">DBI-SDO/SDA</td></tr><tr><td style="text-align:left">SPI1-MISO</td><td style="text-align:left">DBI-SDI(WRX)/TE/DC X</td></tr><tr><td style="text-align:left">SPI1-HOLD</td><td style="text-align:left">DBI-DCX/WRX</td></tr><tr><td style="text-align:left">SPI1-WP</td><td style="text-align:left">DBI-TE</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="csi电路接口">CSI电路接口<a href="#csi电路接口" class="hash-link" aria-label="CSI电路接口的直接链接" title="CSI电路接口 的直接链接">​</a></h3>
+<table><thead><tr><th style="text-align:left">PIN脚</th><th style="text-align:left">CSI接口</th><th style="text-align:left">说明</th><th style="text-align:left">DVP</th></tr></thead><tbody><tr><td style="text-align:left">PA18/PB0</td><td style="text-align:left">NCSI0-HSYNC</td><td style="text-align:left">摄像头行同步</td><td style="text-align:left">HSYNC</td></tr><tr><td style="text-align:left">PA19/PB1</td><td style="text-align:left">NCSI0-VSYNC</td><td style="text-align:left">摄像头场同步</td><td style="text-align:left">VSYNC</td></tr><tr><td style="text-align:left">PA20/PB14</td><td style="text-align:left">NCSI0-PCLK</td><td style="text-align:left">摄像头像素时钟</td><td style="text-align:left">PCLK</td></tr><tr><td style="text-align:left">PA21/PB15</td><td style="text-align:left">NCSI0-MCLK</td><td style="text-align:left">摄像头主时钟</td><td style="text-align:left">MCLK</td></tr><tr><td style="text-align:left">PA22</td><td style="text-align:left">NCSI0-D0</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y2</td></tr><tr><td style="text-align:left">PA23</td><td style="text-align:left">NCSI0-D1</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y3</td></tr><tr><td style="text-align:left">PA27</td><td style="text-align:left">NCSI0-D2</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y4</td></tr><tr><td style="text-align:left">PA26</td><td style="text-align:left">NCSI0-D3</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y5</td></tr><tr><td style="text-align:left">PA29</td><td style="text-align:left">NCSI0-D4</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y6</td></tr><tr><td style="text-align:left">PA25</td><td style="text-align:left">NCSI0-D5</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y7</td></tr><tr><td style="text-align:left">PA24</td><td style="text-align:left">NCSI0-D6</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y8</td></tr><tr><td style="text-align:left">PA28</td><td style="text-align:left">NCSI0-D7</td><td style="text-align:left">Parallel CSI Data</td><td style="text-align:left">Y9</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="射频端口设计">射频端口设计<a href="#射频端口设计" class="hash-link" aria-label="射频端口设计的直接链接" title="射频端口设计的直接链接">​</a></h3>
+<p>射频输出端口（ANT pin）无需匹配电路，但可预留天线 PI 型匹配电路。如上图所示。为了方便天线PI型匹配电路调试，需在射频输出端口与天线间预留 0Ω电阻 WR1。如图所示。</p>
+<p><img loading="lazy" alt="image19" src="/assets/images/image19-01090b1f338406cb4a8469a60218b22f.jpg" width="800" height="288" class="img_ev3q"></p>
+<p>因 R128 芯片射频前端已设计滤波器用于射频认证时滤除谐波杂散，因此，硬件方案端只需要预留一个PI型匹配电路用于匹配天线，无需额外多预留一个 PI型滤波网络用于滤除谐波杂散。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="原理图设计其他">原理图设计其他<a href="#原理图设计其他" class="hash-link" aria-label="原理图设计其他的直接链接" title="原理图设计其他的直接链接">​</a></h3>
+<ul>
+<li>I2C/TWI 最大支持 400Kbit/s 的传输速率，总线上加上拉电阻，推荐值为 2.0K~4.7K，上拉电源为对应 GPIO电源域，各设备地址不得有冲突；</li>
+<li>GPIO分配时，请确保电平相匹配，上拉的电压域必须为此 GPIO的电源域，以防外设向 SOC漏电情况发生；</li>
+<li>串口调试电路 TX/RX 信号要加防倒灌电/隔离保护电路。可以选择 MOS管或二极管方案，二极管方案必须选择肖特基二极管。加工生产时为节约成本，MOS管和二极管隔离保护电路可以 NC，但板级至少要串接 100Ω电阻。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pcb设计">PCB设计<a href="#pcb设计" class="hash-link" aria-label="PCB设计的直接链接" title="PCB设计的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="叠层设计">叠层设计<a href="#叠层设计" class="hash-link" aria-label="叠层设计的直接链接" title="叠层设计的直接链接">​</a></h3>
+<p>R128采用两层板或四层板设计。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="2层板设计参考">2层板设计参考<a href="#2层板设计参考" class="hash-link" aria-label="2层板设计参考的直接链接" title="2层板设计参考的直接链接">​</a></h4>
+<p><img loading="lazy" alt="image20" src="/assets/images/image20-a88183c9b4fc8eb09c3534e6f979a2d1.jpg" width="800" height="335" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="4层板设计参考">4层板设计参考<a href="#4层板设计参考" class="hash-link" aria-label="4层板设计参考的直接链接" title="4层板设计参考的直接链接">​</a></h4>
+<p><img loading="lazy" alt="image21" src="/assets/images/image21-3ac52655f8328c3f6020aa5aaa5a8d01.jpg" width="800" height="359" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="soc-fanout">SoC Fanout<a href="#soc-fanout" class="hash-link" aria-label="SoC Fanout的直接链接" title="SoC Fanout的直接链接">​</a></h3>
+<p>R128封装采用 8x8mm QFN设计，0.35mm ball pitch，0.17mm ball size，可支持 2 层板方案与 4 层板方案。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="两层板-fanout-建议">两层板 Fanout 建议<a href="#两层板-fanout-建议" class="hash-link" aria-label="两层板 Fanout 建议的直接链接" title="两层板 Fanout 建议的直接链接">​</a></h4>
+<ul>
+<li>尽量保证 SOC 背面 GND 完整；</li>
+</ul>
+<p><img loading="lazy" alt="image22" src="/assets/images/image22-d82a7d90ac5d2f3a14034195a138bd3e.jpg" width="800" height="379" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="四层板-fanout-建议">四层板 Fanout 建议<a href="#四层板-fanout-建议" class="hash-link" aria-label="四层板 Fanout 建议的直接链接" title="四层板 Fanout 建议的直接链接">​</a></h4>
+<p><img loading="lazy" alt="image23" src="/assets/images/image23-ec0b635a9d012c733f36396fca8760ad.jpg" width="800" height="424" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小系统-layout-设计建议">小系统 Layout 设计建议<a href="#小系统-layout-设计建议" class="hash-link" aria-label="小系统 Layout 设计建议的直接链接" title="小系统 Layout 设计建议的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="时钟系统layout设计">时钟系统Layout设计<a href="#时钟系统layout设计" class="hash-link" aria-label="时钟系统Layout设计的直接链接" title="时钟系统Layout设计的直接链接">​</a></h4>
+<p>R128 40Mhz 时钟建议 Layout 采用以下原则：</p>
+<ul>
+<li>晶振尽量靠近 IC 摆放，使 HXTAL-OUT/HXTAL-IN 走线长度小于 400mil，减少 PCB走线寄生电容，保证晶振频偏精度；</li>
+<li>晶体必须和 SOC放置同一面。避免换层过孔，增加杂散电容而引起频率偏移；</li>
+<li>晶振的匹配电容必须靠近晶振管脚摆放；</li>
+<li>晶振及其走线区域的外围和相邻层，用 GND屏蔽保护，禁止其它走线；</li>
+<li>晶体下方不允许走线，内层或另一面无法避开时不能与时钟线平行走线。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="复位和系统配置pin-layout-设计">复位和系统配置Pin Layout 设计<a href="#复位和系统配置pin-layout-设计" class="hash-link" aria-label="复位和系统配置Pin Layout 设计的直接链接" title="复位和系统配置Pin Layout 设计的直接链接">​</a></h4>
+<p>复位和系统配置PIN 建议Layout 采用以下原则：</p>
+<ul>
+<li>SOC 复位信号上拉电阻靠近SOC，复位信号两边包地，对地1nF 电容靠近SOC 放置，提高ESD 性能；</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="soc-电源layout-设计">SOC 电源Layout 设计<a href="#soc-电源layout-设计" class="hash-link" aria-label="SOC 电源Layout 设计的直接链接" title="SOC 电源Layout 设计的直接链接">​</a></h4>
+<p>SOC 端电源建议Layout 采用以下原则：</p>
+<ul>
+<li>每1A 电流对应40mil 线宽（铜厚1oz），电源换层尽量多打Via 孔，保证连接性;</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="spi-flash-layout-设计">SPI FLASH Layout 设计<a href="#spi-flash-layout-设计" class="hash-link" aria-label="SPI FLASH Layout 设计的直接链接" title="SPI FLASH Layout 设计的直接链接">​</a></h3>
+<ul>
+<li>SPI FLASH应靠近主控摆放，走线长度≤2000mil；</li>
+<li>走线间距≥2倍线宽，CLK 单独包地处理；</li>
+<li>CLK信号串接电阻靠近主控摆放，串阻与主控连接走线距离≤300mil；</li>
+<li>DATA信号串接电阻为兼顾读写方向信号匹配，建议靠近链路中间放置。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="emmc-layout-设计">EMMC Layout 设计<a href="#emmc-layout-设计" class="hash-link" aria-label="EMMC Layout 设计的直接链接" title="EMMC Layout 设计的直接链接">​</a></h3>
+<ul>
+<li>EMMC与主控间走线长度≤2000mil；线间距≥2W；D0<del>D3、DS 相对 CLK等长控制+/-300mil 以内；且 D0</del>D3 上使用过孔的数量尽量相同；</li>
+<li>除 Reset 外，保证所有信号线控制阻抗 50Ω ；</li>
+<li>电源走线线宽不小于 12mil；</li>
+<li>CLK和 DS 信号尽量包地处理，包地通过过孔与 GND 平面连接。如果不能包地,则保持线间距≥3倍线宽，所有信号避开高频信号；</li>
+<li>VCCQ, VCC, VDDi的所有去耦电容均靠近 eMMC摆放；</li>
+<li>CLK信号串接电阻靠近主控摆放，串阻与主控 CLK连接走线距离≤300mil；</li>
+<li>DS信号下拉电阻靠近 eMMC摆放。下拉电阻引入桩线长度≤200mil；</li>
+</ul>
+<p>请注意：</p>
+<ol>
+<li>eMMC NC/RFU等保留引脚都悬空，不可为了走线方便将这些信号与电源、地、或其他 eMMC信号连接在一起。如果确实走线有困难，可适当修改 eMMC PCB 封装，去掉一些 NC/RFU 的 ball。</li>
+<li>如果期望eMMC运行在较高频率，则建议只使用eMMC，保证主控IO与eMMC点对点连接。如果NAND/eMMC双 Layout时，走线采用菊花链方式，将 eMMC 作为走线的终点，尽量减少分叉线长度</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sdio-layout-设计">SDIO Layout 设计<a href="#sdio-layout-设计" class="hash-link" aria-label="SDIO Layout 设计的直接链接" title="SDIO Layout 设计的直接链接">​</a></h3>
+<p>SDIO 建议 Layout 采用以下原则：</p>
+<ul>
+<li>CLK串接电阻靠近主控摆放；</li>
+<li>D0~D3相对 CLK等长控制 &lt; 500mil；</li>
+<li>走线尽量避开高频信号，信号线走线参考平面完整；</li>
+<li>2层板设计时，CLK信号走线要求包地处理。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="usb-layout-设计">USB Layout 设计<a href="#usb-layout-设计" class="hash-link" aria-label="USB Layout 设计的直接链接" title="USB Layout 设计的直接链接">​</a></h3>
+<p>USB建议 Layout 采用以下原则：</p>
+<ul>
+<li>阻抗要求：差分 90ohm</li>
+<li>等长需求：差分对内长度差 50mil内，总长度控制在 4000mil以内；</li>
+<li>USB-5V 按照电流要求走线；</li>
+<li>USB-DM/USB-DP走线的过孔不超过 2个；</li>
+<li>USB-DM/USB-DP建议与其它信号的间距大于 10mil，保证 USB信号参考平面完整，避免走线走在器件下面或者与其他信号交叉；</li>
+<li>TVS器件需要靠近 USB座子摆放；</li>
+<li>USB座子金属外壳接地管脚 TOP面建议全铺接地。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="音频-layout-设计">音频 Layout 设计<a href="#音频-layout-设计" class="hash-link" aria-label="音频 Layout 设计的直接链接" title="音频 Layout 设计的直接链接">​</a></h3>
+<p>SOC端音频部分建议 Layout 采用以下原则：</p>
+<ul>
+<li>AVCC/HPVCC/VRA1/VRA2/AGND接地电容、电阻依次靠近主控摆放；</li>
+<li>PCB走线 AVCC、VRA1、VRA2线宽≥10 mil；线长≤300mil，远离高速干扰信号；</li>
+<li>AGND走线线宽尽量大，空间允许情况下增加大片覆铜，若耳机座远离 SOC，建议 AGND 分别在 SOC端和耳机座端放置 0 ohm电阻到地，连接到 GND平面的过孔≥2个。</li>
+</ul>
+<p>MIC 建议 Layout 采用以下原则：</p>
+<ul>
+<li>ESD 器件必须靠近 MIC 摆放，从 MIC 引出来的走线必须先经过 ESD器件，在连接其他器件；</li>
+<li>MICxP、MICxN，类差分走线，线宽 4mil，线距 4mil，包地。如果 MIC的滤波电容接地点是 EARCOM，则用 EARCOM 包地；</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lcd-layout-设计">LCD Layout 设计<a href="#lcd-layout-设计" class="hash-link" aria-label="LCD Layout 设计的直接链接" title="LCD Layout 设计的直接链接">​</a></h3>
+<p>RGB建议 Layout 采用以下原则：</p>
+<ul>
+<li>R\G\B、行场同步、DE等信号参考时钟做等长处理≤500mil；</li>
+<li>时钟信号包地，串电阻靠近主控；</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="csi-layout-设计">CSI Layout 设计<a href="#csi-layout-设计" class="hash-link" aria-label="CSI Layout 设计的直接链接" title="CSI Layout 设计的直接链接">​</a></h3>
+<p>CSI建议 Layout 采用以下原则：</p>
+<ul>
+<li>PCLK的对地电容靠近主控，串联电阻靠近模组；</li>
+<li>MCLK的对地电容靠近模组，串联电阻靠近主控；</li>
+<li>PCLK/MCLK信号包地处理，如空间受限，需保持该信号线在间距≤15mil 空间内无其他走线，尽量与 DATA 线拉开距离；</li>
+<li>连接时保证较少的换层（MCLK、PCLK换层过孔≤2 个）；</li>
+<li>走线间距大于 2 倍线宽；</li>
+<li>CSI接口走线长度要求控制在 4000mil以内；</li>
+<li>DATA、HSYNC、VSYNC 参考 PCLK做 500mil的组内等长，PCLK尽量不要因为追求等长而走蛇形线；</li>
+<li>PCLK包地需延长到 sensor和 IC近端。PCLK 两边不要出现 CSI_DATA 线，远离高速翻转的信号线，或用地线隔离。如果 PCLK 和 DATA的 BALL相邻，则 PCLK和 DATA在出线时就往不同层走。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="wifi-和天线-layout-设计">WIFI 和天线 Layout 设计<a href="#wifi-和天线-layout-设计" class="hash-link" aria-label="WIFI 和天线 Layout 设计的直接链接" title="WIFI 和天线 Layout 设计的直接链接">​</a></h3>
+<p>WIFI 建议 Layout 采用以下原则：</p>
+<ul>
+<li>射频端口尽量靠近天线或天线接口，射频走线远离电源、LCD电路、摄像头、马达、HPOUT、USB等易产生干扰的模块；</li>
+<li>天线馈线阻抗控制 50ohm，为了增大线宽减少损耗，通常馈线相邻层挖空，隔层参考参考平面需要是完整地，同层地距离天线馈线距离保持一致，两边多打地过孔；</li>
+<li>射频线需要圆滑走线，不能换层，并进行包地处理，两边均匀的打地过孔，射频线需要远离时钟线的干扰；</li>
+<li>合理布局天线馈线的匹配电容电阻，使馈线平滑，最短，无分支，无过孔，少拐角，避免阻抗突变；</li>
+<li>如使用 PCB走线作天线，请确保天线走线附近区域完全净空，净空区大于 50mm²，天线本体至少距周围的金属 1cm以上；</li>
+</ul>
+<p><img loading="lazy" alt="image25" src="/assets/images/image25-519b0af6e7d9fda5f62f5960d52d0581.jpg" width="656" height="308" class="img_ev3q"></p>
+<p><img loading="lazy" alt="image26" src="/assets/images/image26-ddba9b334d429d5801e1538cf283a073.jpg" width="594" height="208" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="热设计">热设计<a href="#热设计" class="hash-link" aria-label="热设计的直接 链接" title="热设计的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="热工作条件">热工作条件<a href="#热工作条件" class="hash-link" aria-label="热工作条件的直接链接" title="热工作条件的直接链接">​</a></h3>
+<ul>
+<li>热设计的最主要目的是确保电子设备中元器件的工作温度低于其最大的许可温度。</li>
+<li>元器件的最大许可温度根据可靠性要求及失效率确定。对于半导体器件和集成电路，主要是控制结温 Tj，热设计要保证 Tj≤0.9*Tjmax，其中 Tjmax 是器件的最大许可结温。</li>
+<li>对于 R128而言，其 Tjmax=125℃，设计应保证 Tj 应小于 112℃。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="散热设计参考">散热设计参考<a href="#散热设计参考" class="hash-link" aria-label="散热设计参考的直接链接" title="散热设计参考的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="布局布线的热设计原则">布局布线的热设计原则<a href="#布局布线的热设计原则" class="hash-link" aria-label="布局布线的热设计原则的直接链接" title="布局布线的热设计原则的直接链接">​</a></h4>
+<ul>
+<li>大功耗器件尽量靠近 PCB板上的大面积地层铜箔，借助铜箔散热；QFN芯片的中间 EPAD是专门设计来散热的，因此一定要接到地层上；</li>
+<li>PCB 板上功耗大的器件，放在出风口附近；热敏感器件，放在进风口附近；不要将发热器件相互靠得太近，更不要将高的元器件挡在功耗大的器件前面；对于功率密度高的器件，建议不要靠压在PCB 的铜箔上散热，而要立起来，用散热器散热，功耗大的器件立起来自然散热时，建议将面积大的散热面与空气流动方向平行；</li>
+<li>PCB板上的元器件加散热器时，要注意使散热器的肋片方向与气流方向平行，对于确实无法保证这点的，可以使用对气流方向  不敏感的指型散热器；</li>
+<li>对模块内部不能够吹到风的 PCB 板，在布置元器件时，元器件与元器件之间，元器件与结构件之间应保持一定距离，以利空气流动，增强对流换热。</li>
+<li>在 PCB上布置各种元器件时，应将功率大、发热量大的元器件放在 PCB边沿和顶部(重力 top面)，以利于散热；</li>
+<li>应将不耐热的元件(如电解电容)放在靠近进风口的位置，而将本身发热而又耐热的元件(如电阻，变压器等)放在靠近出风口的位置；</li>
+<li>在 PCB上布置各种元器件时，应将功率大、发热量大的元器件放在出风口的位置；</li>
+<li>对热敏感元件，在结构上应采用“热屏蔽”方法解决：</li>
+<li>尽可能将热通路直接连接到热沉；</li>
+<li>减少高温与低温元器件之间的辐射耦合，加热屏蔽板，形成热区和冷区；</li>
+<li>尽量降低空气的温度梯度；</li>
+<li>将高温元器件安装在内表面高黑度，外表面低黑度的机壳中。</li>
+<li>要保证印制线的载流容量，印制线的宽度必须适于电流的传导，不能引起超过允许的温升和压降。</li>
+<li>较大的焊盘及大面积铜皮对管脚的散热十分有利，但在过波峰焊或回流焊时由于铜皮散热太快，容易造成焊接不良，必须进行隔热设计，如 GND 花接等，常见的隔热设计方法如图所示。</li>
+</ul>
+<p><img loading="lazy" alt="image28" src="/assets/images/image28-0e0e277449ce0ac0d3a911ea7e944d62.jpg" width="657" height="281" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="散热器选择原则">散热器选择原则<a href="#散热器选择原则" class="hash-link" aria-label="散热器选择原则的直接链接" title="散热器选择原则的直接链接">​</a></h3>
+<ul>
+<li>选择合适的散热器，不仅与散热器的大小有关，而且和地域、环境、温度（季节）、通风条件及安装密度，模块工作电流大小等 因素有关。</li>
+<li>接触面：要求发热件与散热器要有良好接触，尽可能降低接触热阻，所以最好有大的接触面，接触面还需要有较高的光洁度，为了弥补因接触面的粗糙而导致的贴合不良，可以在中间涂抹导热脂，可以有效降低接触热阻；</li>
+<li>导热材料：铜、铝都有较好的导热性能，铜的导热系数虽然优于铝，但铜有密度太高、价格贵的缺点，所以实际应用中铝材是应用最多；</li>
+<li>固定方式：这个也是比较重要的一环，如果不能把发热件与散热片良好接触，也是无法有效把热量传导到散热器上的，应用中有直接用螺丝钉紧固的，也有用弹簧片压固的，可以根据需要选择设计；</li>
+<li>形状：包括页片与基材的形状尺寸，要有尽可能加大散热表面积，这样散热片的热量才能快速与周围空气对流，比如说增加页片数目，在页片上做波浪纹都是好办法；基材要厚一些比较好，长而薄的散热片效率很差，在远端基本上是不起作用的了自然对流：发热器件或者散热片的热量可以是依靠；</li>
+<li>自然对流散热：在使用功率器件时最重要的是如何使其产生的热量有效地散发出去，以获得高可靠性。散热的最一般方法是把器件安装在散热器上，散热板将热量辐射到周围的空气中去，以及通过自然对流来散发热量。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="器件安装的原则">器件安装的原则<a href="#器件安装的原则" class="hash-link" aria-label="器件安装的原则的直接链接" title="器件安装的原则的直接链接">​</a></h3>
+<ul>
+<li>元器件的安装应尽量减少元器件壳与散热器表面间的热阻，即接触热阻；</li>
+<li>为尽量减小传导热阻，应采用短通路，即尽可能避免采用导热板或散热块把元器件的热量引到散热器表面，而元器件直接贴在散热器表面则是最经济、最可靠、最有效的散热措施；</li>
+<li>为了改善器件与散热器接触面的状况，应在接触面涂导热介质，常用的导热介质有导热脂、导热胶、导热硅油、热绝缘胶等；</li>
+<li>对器件须与散热器绝缘的情况，采用的绝缘材料应同时具有良好的导热性能，且能够承受一定的压力而不被刺穿；</li>
+<li>把器件装配在散热器上时，应控制安装压力或力矩进行装配，压力不足会使接触热阻增加，压力过大会损坏器件；</li>
+<li>将大功率混合微型电路芯片安装在比芯片面积大的散热片上；</li>
+<li>对于多层印制线路板，应利用电镀通孔来减少通过线路板的传导热电阻。这些小孔就是热通路或称热道；</li>
+<li>当利用接触界面导热时，采用下列措施使接触热阻减到最小。</li>
+<li>尽可能增大接触面积；</li>
+<li>确保接触表面平滑；</li>
+<li>利用软材料接触；</li>
+<li>扭紧所有螺栓以加大接触压力(注意不应残留过大应力)；</li>
+<li>利用合理的紧固件设计来保证接触压力均匀。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="功耗管理参考建议">功耗管理参考建议<a href="#功耗管理参考建议" class="hash-link" aria-label="功耗管理参考建议的直接链接" title="功耗管理参考建议的直接链接">​</a></h3>
+<ul>
+<li>提高电源转换效率，对于小型化的产品或者对热设计要求较高的产品，电路设计时推荐采用 DCDC代替 LDO 供电，尽量少用高压差的 LDO；</li>
+<li>软件优化场景功耗，不使用的内部模块或者外设，可以通过软件关闭相应模块的供电；</li>
+<li>软件根据应用场景和 VF表实时选择合适的 CPU工作电压，以降低芯片功耗；</li>
+<li>实时监控芯片内部温度 Sensor，限定芯片最高工作温度，保护芯片。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="emc设计">EMC设计<a href="#emc设计" class="hash-link" aria-label="EMC设计的直接链接" title="EMC设计的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="esd设计">ESD设计<a href="#esd设计" class="hash-link" aria-label="ESD设计的直接链接" title="ESD设计的直接链接">​</a></h3>
+<p>原理图 ESD设计建议参考如下：</p>
+<ul>
+<li>系统挂死与 IO的抗 ESD能力有关，提高各接口输入 PIN的 ESD 能力有助于提高系统 ESD，如USB-ID/CARD-DET检测 PIN到 SOC端串接电阻提高 ESD性能；</li>
+<li>各接口均要根据接口类型在电源和信号上预留合适的 ESD保护器件；</li>
+<li>Reset信号建议增加 1nF电容接地，电容靠近主控摆放 ；电容接地端需用过孔加强连接；Reset走线需要全程用 GND走线保护；</li>
+<li>对于模组上的 reset 信号，需在模组上靠近芯片管脚的位置增加 1~100nF 电容接地；</li>
+<li>关键敏感电源采用 LC 滤波设计。</li>
+</ul>
+<p>PCB ESD设计建议参考如下：</p>
+<ul>
+<li>PCB层叠设计必须保证比较完整的 GND平面，所有的 ESD泄放路径直接通过过孔连接到这个完整的GND平面；其他层尽可能多的铺 GND。</li>
+<li>POWER平面要比 GND平面内缩不少于 3H（H指 POWER平面相对 GND平面的高度）。</li>
+<li>在 PCB四周增加地保护环。</li>
+<li>关键信号（RESET/Clock等）与板边距离不小于 5mm，同时必须与走线层的板边 GND铜皮距离不小于 10mils。</li>
+<li>CPU/晶振等 ESD敏感的关键器件，离外部金属接口的距离不小于 20mm，如果小于 20mm，建议预留金属屏蔽罩，并且距离其他板边不小于 5mm。</li>
+<li>关键信号（RESET/Clock等）尽量避免与外部接口信号或经过 IO附近的走线相邻并行走线；如果不可避免，相邻并行的走线长度不超过 100mils；IO保护地下方尽量不要走线，在必须走线的情况下建议走内层。</li>
+<li>无论外部接口信号还是内部信号，走线必须避免多余的桩线。</li>
+<li>必须保证外部连接器金属外壳接地良好，在板边直接通过过孔连接 GND平面，每个 GND焊盘与 GND平面之间的连接过孔不少于 3 个。</li>
+<li>对于部分 ESD 整改难度较大的 IO，可将 IO GND独立出来，与主 GND 用磁珠连接以防止静电能量进入主 GND（需在信号质量可接受的范围内）。</li>
+<li>外部接口信号必须连接外部 ESD 器件，进行 ESD保护。如下图所示，外部接口信号 ESD 器件放置位置尽可能靠近外部连接器，与连接器间避免过孔；ESD器件接地端直接通过过孔连接到 GND平面，而且过孔数量不少于 3 个；从外部接口进来，必须最先看到 ESD器件；ESD器件的信号端与外部信号端必须尽可能短，尽可能宽，建议直接搭接在信号走线上。</li>
+</ul>
+<p><img loading="lazy" alt="image29" src="/assets/images/image29-aefb9d9f2abc551d01d1c009d1224e1a.jpg" width="571" height="191" class="img_ev3q"></p>
+<p>软件 ESD 设计建议参考如下：</p>
+<ul>
+<li>把不用的 IO 口设置为低电平；</li>
+<li>加看门狗，对保护的目标状态位进行检测。</li>
+</ul>
+<p>结构 ESD 设计建议参考如下：</p>
+<ul>
+<li>建议在 PCB板双面四周均匀留出多个不小于 25mm2 的 GND裸露铜皮（此铜皮直接通过过孔与 GND平面相连），并通过导电棉与金属平面相连接；</li>
+<li>把端口的地与金属壳相连接而加大 ESD的泄放空间。</li>
+<li>如果结构允许，建议增加屏蔽罩，对关键电路进行屏蔽，同时必须保证屏蔽罩的各边良好接地；</li>
+<li>（避免屏蔽罩电荷积累，对内部信号放电）；</li>
+<li>螺丝钉要避免伸入机构成为天线；</li>
+<li>塑胶内层喷导电漆屏蔽。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="emi设计">EMI设计<a href="#emi设计" class="hash-link" aria-label="EMI设计的直接链接" title="EMI设计的直接链接">​</a></h3>
+<p>产品设计设计当初，应了解硬件系统有哪些时钟信号，对这些信号加以防护，以提高产品 EMI性能，减少后续 DEBUG 成本。</p>
+<p>R128 各模块主时钟频率如表所示。</p>
+<table><thead><tr><th style="text-align:left">接口</th><th style="text-align:left">时钟</th><th style="text-align:left">时钟频率</th><th style="text-align:left">是否支持展频</th></tr></thead><tbody><tr><td style="text-align:left">TWI</td><td style="text-align:left">TWI-SCK</td><td style="text-align:left">100K~400 KHz</td><td style="text-align:left">支持</td></tr><tr><td style="text-align:left">IIS</td><td style="text-align:left">IIS-MCLK</td><td style="text-align:left">24.576MHz、22.5792MHz</td><td style="text-align:left">支持</td></tr><tr><td style="text-align:left">SDIO</td><td style="text-align:left">SDC-CLK</td><td style="text-align:left">50MHz、100MHz、150MHz</td><td style="text-align:left">支持</td></tr><tr><td style="text-align:left">SPI</td><td style="text-align:left">SPI-CLK</td><td style="text-align:left">50MHz、100MHz</td><td style="text-align:left">支持</td></tr><tr><td style="text-align:left">USB</td><td style="text-align:left">DP/DM</td><td style="text-align:left">12Mbps、480Mbps</td><td style="text-align:left">不支持</td></tr></tbody></table>
+<p>EMI设计建议参考如下：</p>
+<ul>
+<li>各接口按照各模块原理图和 PCB 设计要求进行。</li>
+<li>多层板设计时，硬件系统上高速时钟线建议走内层；且较高速的单端的时钟线上均要预留 RC滤波电路，抑制高频分量，对于各模块时钟线进行包地处理。</li>
+<li>差分对信号进行按照差分对要求走线，若无空间，需要满足 3W 原则。</li>
+<li>排线座子合理布局，排线下方尽量不要有元器件和 PCB 走线；</li>
+<li>若受结构限制，排线必须拉得很长，则建议排线座子信号线采用两两包地方式，排线必要时要采用带屏蔽线。</li>
+<li>PCB 背面预留一些空白地位置，使用导电泡棉与机壳金属接触，改善地回路；</li>
+<li>喇叭线采用 双绞线。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="checklist">Checklist<a href="#checklist" class="hash-link" aria-label="Checklist的直接链接" title="Checklist的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="原理图设计checklist">原理图设计Checklist<a href="#原理图设计checklist" class="hash-link" aria-label="原理图设计Checklist的直接链接" title="原理图设计Checklist的直接链接">​</a></h3>
+<table><thead><tr><th style="text-align:left">模块</th><th style="text-align:left">序号</th><th style="text-align:left">检查内容</th><th style="text-align:left">级别</th></tr></thead><tbody><tr><td style="text-align:left">BLOCK DIAGRAM</td><td style="text-align:left">1</td><td style="text-align:left">BLOCK DIAGRAM 页请根据实际产品进行更新</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">POWER TREE</td><td style="text-align:left">1</td><td style="text-align:left">POWER TREE红色部分电源具有默认的电压和上电时序，SOC部分的电源分配不能调整。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">确保FLASH/LCD/TP/EPHY/WIFI等外设的电压与DCDC、LDO电源电压匹配。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">确保DCDC、LDO各路电源的负载能力满足外设的需求。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">POWER TREE 页请根据实际产品进行更新</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">POWER (DCDC、LDO)</td><td style="text-align:left">1</td><td style="text-align:left">DCDC、LDO选型可以参考原理图；若使用原理图选型，电容按推荐设计，不要随意更改。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">DCDC电源电感选型必须满足该路电源的电流需求。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">评估好各路电源的工作电压和最大工作电流，并必须在各路DCDC、LDO电源上标注清楚，以便PCB layout设计走线。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">VDD_IO1、VDD_IO2、VDD_IO_5VTOL在使用外部DCDC/LDO进行供电时，为避免时序错误造成IC漏电，必须使用VDD_3V3电源对外部DCDC/LDO进行时序控制。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">VDD_DSP电源建议预留一路外部LDO进行供电。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">若有其特殊待机场景或者供电需求，请列出让全志FAE确认。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">SOC</td><td style="text-align:left">1</td><td style="text-align:left">晶振部分的电路设计必须符合参考设计，串并接电阻不能删除，并联电容不能随意更改。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">选用的晶振工作温度必须符合产品设计工作温度。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">SOC部分的电源滤波电容必须与参考设计相同，不能修改容值，也不能删减个数，且要备注靠近SOC pin放  置。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">CHIP-PWD和RESET信号上必须接1nF下地电容，靠近SOC PIN放置。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">为避免SOC启动时误进入升级状态，PA1/FEL0和PA2/FEL1 不能同时接下拉对地电阻。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">7</td><td style="text-align:left">SOC的系统功能配置脚必须正确无误，无特殊需求可以保持与标案设计一致。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">8</td><td style="text-align:left">GPIO口使用时，需确保GPIO口电平匹配，若需要加上拉电阻，需保证上拉电压为其供电电压域，防止有漏电情况发生。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">FLASH</td><td style="text-align:left">1</td><td style="text-align:left">R128-S1/S2默认使用内置FLASH，此时VDD-IO1必须使用3.3V电源。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">R128-S3无内置FLASH,必须使用外置FLASH、EMMC器件，建议使用PB口作为存储介质启动端口。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">R128可通过boot_sel烧码选择不同的启动介质与启动端口，具体烧码值建议联系全志FAE。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">FLASH、EMMC的物料选型必须采用全志AVL支持列表里面的型号。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">RGB</td><td style="text-align:left">1</td><td style="text-align:left">R128支持RGB接口，使用时需保证LCD的IO电压与SOC端的IO电压保持一致，若不一致,必须做电平转换处理,建议使用3.3V IO电平。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">确保LCD的背光电路与LCD的规格匹配，反馈电路必须采用精度为1%的电阻，电流采样电阻精度必须为1%，封装满足功率需求。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">确保LCD的正负压电源与LCD的规格匹配。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">必须在原理图中标注清楚LCD部分电源的工作电压和最大工作电流，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">CTP</td><td style="text-align:left">1</td><td style="text-align:left">CTP的I2C必须接上拉电阻,CTP与SOC的IO电平必须匹配。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">CTP的供电合理，不能存在漏电情况。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">AUDIO</td><td style="text-align:left">1</td><td style="text-align:left">AVCC/VRA1/VRA2的AGND通过0R电阻单点到GND</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">Audio codec所有外围电阻以及电容的参数不能修改。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">所有喇叭、LINEIN、MIC接口必须接ESD器件，且靠近座子摆放。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">单喇叭的默认使用LINEOUTLP/N信号。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">MIC单端或差分配置是否正确。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">功放的使能脚必须要有下拉电阻，推荐值为100K。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">7</td><td style="text-align:left">建议在原理图中标注清楚AUDIO部分电源的工作电压和最大工作电流，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">USB</td><td style="text-align:left">1</td><td style="text-align:left">USB接口支持OTG/HOST功能，USB电源建议通过限流开关进行控制。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">USB接口必须挂ESD器件，USB D+/D-必须使用容抗小于5PF的ESD器件。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">USB-DP/DM建议预留串接电阻位置,建议阻值5Ω。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">USB具有OTG功能，USB-ID的设计必须参考标案原理图设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">必须在原理图中标注清  楚USB信号线的走线阻抗要求，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">必须在原理图中标注清楚USB电源的最大工作电流，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">CARD</td><td style="text-align:left">1</td><td style="text-align:left">SDC0-CLK信号需串接33R电阻，并靠近SOC摆放。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">SDC0所有信号都不需要外接上拉,禁止使用外部上拉。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">SD接口所有信号需挂ESD器件，若支持SD3.0高速模式，其中CLK、CMD、DATA信号的ESD器件容抗必须小于5PF。SD2.0需小于35PF。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">Card-DET信号建议串1K电阻，提高系统ESD</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">建议在原理图中标注清楚TF卡信号线的走线阻抗要求，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">建议在原理图中标注清楚CARD电源的最大工作电流，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">WIFI/BT</td><td style="text-align:left">1</td><td style="text-align:left">WIFI射频走线需靠近天线部分，要求平滑走线，远离电源、LCD电路、摄像头、马达、功放、USB等易产生干扰的模块。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">天线馈线阻抗控制50ohm，为了增大线宽减少损耗，通常馈线相邻层挖空，隔层参考参考平面需要是完整地，同层地距离天线馈线距离保持一致，两边多打地过孔；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">WiFi的天线需预留π型滤波电路，便于天线匹配调试。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">必须在原理图中标注清楚射频信号线的走线阻抗要求，以便PCB layout设计。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">KEY</td><td style="text-align:left">1</td><td style="text-align:left">GPADC网络的采样范围为0-1.08V，需保证任意两个按键按下时GPADC电压差必须&gt;=0.2V。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">GPADC按键阻值建议和参考设计保持一致，采用1%的高精度电阻；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">GPADC按键建议保留去抖电容和ESD器件。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">FEL、RESET按键建议保留去抖电容和ESD器件。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">DEBUG</td><td style="text-align:left">1</td><td style="text-align:left">UART0调试接口必须保留，建议串接100ohm电阻。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">JTAG调试接口预留测试点</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left">ESD</td><td style="text-align:left">1</td><td style="text-align:left">复位信号在靠近AP端，必须保留一个对GND的滤波电容，容值固定选择1nF。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">部分与外部直连或者裸露的接口，如speaker、MIC、耳机、USB、TF、DCIN等，必须加上ESD器件 。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">3</td><td style="text-align:left">所有按键必须挂ESD器件。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">DRC</td><td style="text-align:left">1</td><td style="text-align:left">所有电气规格检查必须无ERROR，所有WARNING与QUESTION必须逐一确认合理，不合理的问题项需要优化处理。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">所有物理规格检查必须无ERROR，所有WARNING与QUESTION必须逐一确认合理，不合理的问题项需要优化处理。</td><td style="text-align:left">建议</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pcb设计-checklist">PCB设计 Checklist<a href="#pcb设计-checklist" class="hash-link" aria-label="PCB设计 Checklist的直接链接" title="PCB设计 Checklist的直接链接">​</a></h3>
+<table><thead><tr><th style="text-align:left">模块</th><th style="text-align:left">序号</th><th style="text-align:left">检查内容</th><th style="text-align:left">级别</th></tr></thead><tbody><tr><td style="text-align:left">基本要求</td><td style="text-align:left">1</td><td style="text-align:left">主控以及配套芯片封装是否有更改；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">2</td><td style="text-align:left">PCB 的叠层参数与阻抗控制</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">SOC</td><td style="text-align:left">3</td><td style="text-align:left">晶振尽量靠近 IC 摆放，走线长度小于 400mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">4</td><td style="text-align:left">晶振及其走线区域的外围和相邻层，用 GND 屏蔽保护。晶振及其走线区域的相邻层，禁止其它走线；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">5</td><td style="text-align:left">所有模块的CLK串接电阻（SDC0-CLK/CARD-CLK/LCD-CLK）靠近主控摆放，串阻与主控CLK连接走线距离≤300mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">6</td><td style="text-align:left">关键信号（EN，FEL等）单线包地，远离板边≥5mm。避免与外部接口信号（USB/SD/等）相邻并行走线；电容靠近主控摆放。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">电源</td><td style="text-align:left">7</td><td style="text-align:left">电源铜箔尽量宽，换层过孔是否足够，一般定义1oz铜厚，宽度40mil铜箔可通过1A电流，V8X16的Via过0.5A电流。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">EMMC</td><td style="text-align:left">8</td><td style="text-align:left">CLK和DS信号做包地处理，如果不能包地则保持3W间距；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">9</td><td style="text-align:left">D0~D3、DS相对CLK等长控制≤300mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">10</td><td style="text-align:left">CLK 串接 33R 电阻靠近主控摆放，串阻与主控 CLK 连接走线距离≤300mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">11</td><td style="text-align:left">DS 下拉电阻靠近 EMMC 摆放。下拉电阻引入桩线长度≤200mil。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">SD-SDIO</td><td style="text-align:left">12</td><td style="text-align:left">CLK做包地处理，如果不能包地则保持3W间距；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">13</td><td style="text-align:left">D0~D3相对CLK等长控制 &lt; 500mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">14</td><td style="text-align:left">CLK 串接 电阻靠近主控摆放，串阻与主控 CLK 连接走线距离≤300mil。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">USB2.0</td><td style="text-align:left">15</td><td style="text-align:left">去耦电容和滤波电容，需要靠近IC摆放，接口ESD器件靠近连接器端摆放，且ESD器件与连接器的传输线长度要小于等于500mils。SS_TX串接的电容应靠近IC端摆放；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">16</td><td style="text-align:left">USB信号线DN\DP长度差50mil内，总长度控制在4000mil以内</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">音频</td><td style="text-align:left">17</td><td style="text-align:left">AVCC、VRP、VRA1、VRA2和AGND接地电容、电阻靠近主控摆放；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">18</td><td style="text-align:left">ESD 器件必须靠近MIC摆放，从MIC引出来的走线必须先经过ESD器件；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">19</td><td style="text-align:left">MICxP、MICxN，类差分走线，线宽4mil，线距4mil，包地。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">WIFI/BT</td><td style="text-align:left">20</td><td style="text-align:left">WiFi模组尽量靠近天线或天线接口。远离电源、LCD电路、摄像头、SPEAKER等易产生干扰的模块。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">21</td><td style="text-align:left">射频线需要圆滑，不能换层，并进行包地处理，两边均匀的打地过孔，射频线需要远离时钟线的干扰；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">22</td><td style="text-align:left">合理布局天线馈线的匹配电容电阻，使馈线平滑，最短，无分支，无过孔，少拐角，避免阻抗突变；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">23</td><td style="text-align:left">用PCB走线作天线，请确保天线走线附近区域完全净空，净空区大于50mm²，天线本体至少距周围的金属1cm以上。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">SPI/FLASH</td><td style="text-align:left">24</td><td style="text-align:left">SPI、FLASH应靠近主控摆放，走线长度≦2000mil；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">25</td><td style="text-align:left">走线间距≧2倍线宽，CLK单独包地处理；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">26</td><td style="text-align:left">时钟信号串接电阻靠近阻抗摆放，串阻与主控连接走线距离≦300mil。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">27</td><td style="text-align:left">数据信号串接电阻为兼顾读写方向信号匹配，建议靠近链路中间放置。</td><td style="text-align:left">建议</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">28</td><td style="text-align:left">使用4线FLASH时，要求MISO/MOSI/WP/HOLD信号等长约束控制在300mil以内</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">CSI</td><td style="text-align:left">28</td><td style="text-align:left">PLCK对地电容靠近主控，串联电阻靠近模组；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">29</td><td style="text-align:left">MCLK对地电容靠近模组，串联电阻靠近主控；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">30</td><td style="text-align:left">HSync对地电容靠近主控；</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">31</td><td style="text-align:left">VSync、HSync、Data串联电阻靠近模组。</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left">ESD</td><td style="text-align:left">32</td><td style="text-align:left">关键信号（RESET/Clock等）单线包地，远离板边≥5mm。避免与外部接口信号（USB/SD/等）相邻并行走线;</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">33</td><td style="text-align:left">reset单线包地，1nF电容靠近主控摆放，电容接地端需用过孔加强连接;</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">34</td><td style="text-align:left">在PCB四周增加地保护环；DDR线束四周建议用GND保护;</td><td style="text-align:left">必须遵守</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">35</td><td style="text-align:left">部分与外部直连或者裸露的接口，如speaker、MIC、耳机、USB、SD等，必须加上ESD器件 ，走线路径为先经过ESD器件再到SOC。</td><td style="text-align:left">必须遵守</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/100askTeam/R128-Docs/tree/main/docs/quick-start/part6/chapter1.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/category/硬件设计"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">硬件设计</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/quick-start/part6/chapter2"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">硬件设计参考</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#原理图设计" class="table-of-contents__link toc-highlight">原理图设计</a><ul><li><a href="#硬件系统框图" class="table-of-contents__link toc-highlight">硬件系统框图</a></li><li><a href="#硬件系统基本工作原理" class="table-of-contents__link toc-highlight">硬件系统基本工作原理</a></li><li><a href="#cpu小系统" class="table-of-contents__link toc-highlight">CPU小系统</a></li><li><a href="#电源系统设计" class="table-of-contents__link toc-highlight">电源系统设计</a></li><li><a href="#psram-电路设计" class="table-of-contents__link toc-highlight">PSRAM 电路设计</a></li><li><a href="#flash-电路设计" class="table-of-contents__link toc-highlight">Flash 电路设计</a></li><li><a href="#gpio-电路设计" class="table-of-contents__link toc-highlight">GPIO 电路设计</a></li><li><a href="#led电路设计" class="table-of-contents__link toc-highlight">LED电路设计</a></li><li><a href="#usb电路设计" class="table-of-contents__link toc-highlight">USB电路设计</a></li><li><a href="#sd-card-电路设计" class="table-of-contents__link toc-highlight">SD Card 电路设计</a></li><li><a href="#音频电路设计" class="table-of-contents__link toc-highlight">音频电路设计</a></li><li><a href="#adc电路设计" class="table-of-contents__link toc-highlight">ADC电路设计</a></li><li><a href="#lcd电路接口" class="table-of-contents__link toc-highlight">LCD电路接口</a></li><li><a href="#csi电路接口" class="table-of-contents__link toc-highlight">CSI电路接口</a></li><li><a href="#射频端口设计" class="table-of-contents__link toc-highlight">射频端口设计</a></li><li><a href="#原理图设计其他" class="table-of-contents__link toc-highlight">原理图设计其他</a></li></ul></li><li><a href="#pcb设计" class="table-of-contents__link toc-highlight">PCB设计</a><ul><li><a href="#叠层设计" class="table-of-contents__link toc-highlight">叠层设计</a></li><li><a href="#soc-fanout" class="table-of-contents__link toc-highlight">SoC Fanout</a></li><li><a href="#小系统-layout-设计建议" class="table-of-contents__link toc-highlight">小系统 Layout 设计建议</a></li><li><a href="#spi-flash-layout-设计" class="table-of-contents__link toc-highlight">SPI FLASH Layout 设计</a></li><li><a href="#emmc-layout-设计" class="table-of-contents__link toc-highlight">EMMC Layout 设计</a></li><li><a href="#sdio-layout-设计" class="table-of-contents__link toc-highlight">SDIO Layout 设计</a></li><li><a href="#usb-layout-设计" class="table-of-contents__link toc-highlight">USB Layout 设计</a></li><li><a href="#音频-layout-设计" class="table-of-contents__link toc-highlight">音频 Layout 设计</a></li><li><a href="#lcd-layout-设计" class="table-of-contents__link toc-highlight">LCD Layout 设计</a></li><li><a href="#csi-layout-设计" class="table-of-contents__link toc-highlight">CSI Layout 设计</a></li><li><a href="#wifi-和天线-layout-设计" class="table-of-contents__link toc-highlight">WIFI 和天线 Layout 设计</a></li></ul></li><li><a href="#热设计" class="table-of-contents__link toc-highlight">热设计</a><ul><li><a href="#热工作条件" class="table-of-contents__link toc-highlight">热工作条件</a></li><li><a href="#散热设计参考" class="table-of-contents__link toc-highlight">散热设计参考</a></li><li><a href="#散热器选择原则" class="table-of-contents__link toc-highlight">散热器选择原则</a></li><li><a href="#器件安装的原则" class="table-of-contents__link toc-highlight">器件安装的原则</a></li><li><a href="#功耗管理参考建议" class="table-of-contents__link toc-highlight">功耗管理参考建议</a></li></ul></li><li><a href="#emc设计" class="table-of-contents__link toc-highlight">EMC设计</a><ul><li><a href="#esd设计" class="table-of-contents__link toc-highlight">ESD设计</a></li><li><a href="#emi设计" class="table-of-contents__link toc-highlight">EMI设计</a></li></ul></li><li><a href="#checklist" class="table-of-contents__link toc-highlight">Checklist</a><ul><li><a href="#原理图设计checklist" class="table-of-contents__link toc-highlight">原理图设计Checklist</a></li><li><a href="#pcb设计-checklist" class="table-of-contents__link toc-highlight">PCB设计 Checklist</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://dongshanpi.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">DongshanPI<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://canaan-docs.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Canaan-Docs<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://renesas-docs.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Renesas-Docs<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://rtos.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">RTOS<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://tina.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">TinaSDK-Docs<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://allwinner-docs.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Allwinner-Docs<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://aw-r128.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">R128-Docs<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://space.bilibili.com/275908810" target="_blank" rel="noopener noreferrer" class="footer__link-item">BiliBili<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://forums.100ask.net" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://video.100ask.net/" target="_blank" rel="noopener noreferrer" class="footer__link-item">VideoCenter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/dongshanpi" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://weidongshan.coding.net/public/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Coding<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/100askTeam" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://gitee.com/weidongshan" target="_blank" rel="noopener noreferrer" class="footer__link-item">Gitee<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 100askTeam, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

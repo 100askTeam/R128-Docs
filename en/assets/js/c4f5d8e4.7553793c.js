@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4195],{2841:(e,t,s)=>{s.r(t),s.d(t,{default:()=>a});s(7294);var u=s(6550),r=s(5893);function a(){return(0,r.jsx)(u.l_,{to:"quick-start/part0/video_course/"})}}}]);
